@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import NavBar from './navbar'
 
 function App() {
+  const nav = [
+    { title: 'home', lien: '#home', },
+    {
+      title: 'service', lien: '#service', subelement: [
+        { title: 'For entrepeneurs', lien: "#entrepeneurs" },
+        { title: 'For students', lien: '#students' },
+        { title: 'For hobbysties', lien: '#hobbysties' }]
+    },
+    { title: 'contact', lien: '#contact' }
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div class="container center">
+        <NavBar nav={nav} />
+      </div>
     </div>
   );
 }
-
 export default App;
